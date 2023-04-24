@@ -1,3 +1,17 @@
+/**
+ * Компонент главной страницы приложения.
+ * Отображает список товаров, управляет поиском, добавлением товаров в корзину и закладки.
+ * @param {Object} props - пропсы компонента.
+ * @param {Array} props.items - массив товаров.
+ * @param {string} props.searchValue - текущее значение поискового запроса.
+ * @param {Function} props.setSearchValue - функция для установки значения поискового запроса.
+ * @param {Function} props.onChangeSearchInput - функция для обработки изменения поискового запроса.
+ * @param {Function} props.onAddToFavorite - функция для добавления товара в закладки.
+ * @param {Function} props.onAddToCart - функция для добавления товара в корзину.
+ * @param {boolean} props.isLoading - флаг загрузки.
+ * @returns {JSX.Element} - возвращает JSX разметку компонента.
+ */
+
 import React from 'react';
 import Card from "../../components/card";
 import './style.scss';

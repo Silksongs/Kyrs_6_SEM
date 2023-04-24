@@ -5,9 +5,30 @@ import AppContext from "../contextx";
 import btnRemove from '../../assets/btn-remove.svg'
 import arrow from '../../assets/arrow.svg'
 
+/**
 
+ Функциональный компонент Drawer, представляющий корзину покупок на сайте.
+
+ @param {Function} onClose - Функция, вызываемая при закрытии корзины.
+
+ @param {Function} onRemove - Функция, вызываемая при удалении товара из корзины.
+
+ @param {Array} items - Массив объектов, представляющих товары в корзине.
+
+ @returns {JSX.Element} - Возвращает разметку корзины с товарами.
+ */
 function Drawer({onClose, onRemove, items = []}) {
+    /**
+
+     Объект, представляющий контекст приложения, включающий в себя список товаров в корзине.
+     @type {Object}
+     */
     const {cartItems} = React.useContext(AppContext);
+    /**
+
+     Переменная, содержащая общую стоимость всех товаров в корзине.
+     @type {number}
+     */
     const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
 
 

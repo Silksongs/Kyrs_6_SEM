@@ -8,6 +8,17 @@ import heartUnliked from '../../assets/heart-unliked.svg'
 import btnChecked from '../../assets/btn-checked.svg'
 import btnPlus from '../../assets/btn-plus.svg'
 
+/**
+ * Card Component
+ *
+ * @param {string} id - идентификатор карточки
+ * @param {function} onFavorite - обработчик клика по кнопке "Добавить в избранное"
+ * @param {string} imageUrl - ссылка на изображение карточки
+ * @param {string} title - заголовок карточки
+ * @param {number} price - цена карточки
+ * @param {function} onPlus - обработчик клика по кнопке "Добавить в корзину"
+ * @param {boolean} loading - флаг загрузки контента
+ */
 function Card(
     {
         id,
@@ -21,9 +32,19 @@ function Card(
 
     const {isItemAdded, isItemFavorites} = React.useContext(AppContext);
 
+    /**
+
+     Обрабатывает событие onClick кнопки "Добавить в корзину" и вызывает функцию oneplus с указанием идентификатора товара, названия, URL-адреса изображения и цены.
+     @returns {void}
+     */
     const onClickPlus = () => {
         onPlus({id, title, imageUrl, price});
     }
+    /**
+
+     Обрабатывает событие onClick кнопки "Избранное" и вызывает функцию "Включить избранное" с идентификатором элемента, заголовком, URL-адресом изображения и ценой.
+     @returns {void}
+     */
     const onClickFavorite = () => {
         onFavorite({id, title, imageUrl, price});
     }

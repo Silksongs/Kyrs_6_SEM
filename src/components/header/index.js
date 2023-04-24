@@ -8,10 +8,27 @@ import cart from '../../assets/cart.svg'
 import heart from '../../assets/heart.svg'
 import user from '../../assets/user.svg'
 
+/**
 
+ Компонент Header - шапка сайта.
+
+ @param {Object} props - пропсы.
+
+ @param {Function} props.onClickCart - обработчик клика на кнопку корзины.
+
+ @return {JSX.Element} - разметка компонента.
+ */
 function Header(props) {
 
+    /**
+
+     Получаем данные о товарах в корзине из контекста.
+     */
     const {cartItems} = React.useContext(AppContext);
+    /**
+
+     Вычисляем общую стоимость товаров в корзине.
+     */
     const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
 
     return (
