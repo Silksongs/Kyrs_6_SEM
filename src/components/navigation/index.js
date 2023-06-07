@@ -7,6 +7,7 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "../../pages/home";
 import Favorites from "../../pages/favorites";
+import Reg from "../../pages/Reg";
 /**
 
  @typedef {Object} NavigationProps
@@ -23,7 +24,8 @@ function Navigation({}) {
 
     return (
         <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Reg/>}/>
+            <Route path="/home" element={<Home/>}/>
             <Route path="/favorites" element={<Favorites/>}/>
         </Routes>
     );
